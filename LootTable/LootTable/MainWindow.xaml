@@ -1,0 +1,14 @@
+﻿<Window x:Class="LootTable.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LootTable"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="496.185" Width="567">
+    <Grid>
+        <TextBlock  Name="ItemVarDisplay" Margin="10,10,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="415"/>
+        <Button Content="Roll Item" Margin="10,430,10,0" VerticalAlignment="Top" Height="26" Click="Button_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Weapon_Table>
+  <ItemVars>
+    <Roll_Type type="string"/>
+    <Item_Category type='string'/>
+    <Weapon type='string'/>
+    <Weapon_Type type='string' />
+    <Damage_Type type='string' />
+    <Plus_Amount type='number' />
+    <Price type='number' />
+    <Special_Abilities type='list' />
+    <Special_Qualities type='list' />
+    <Plus_Price type='number' />
+  </ItemVars>
+  <IndexTable>
+    <Plus_Price_Index type='number' tableVar='Plus_Price'>
+      <AddNum index='1' amt='2000'>Price</AddNum>
+      <AddNum index='2' amt='8000'>Price</AddNum>
+      <AddNum index='3' amt='18000'>Price</AddNum>
+      <AddNum index='4' amt='32000'>Price</AddNum>
+      <AddNum index='5' amt='50000'>Price</AddNum>
+      <AddNum index='6' amt='72000'>Price</AddNum>
+      <AddNum index='7' amt='98000'>Price</AddNum>
+      <AddNum index='8' amt='128000'>Price</AddNum>
+      <AddNum index='9' amt='162000'>Price</AddNum>
+      <AddNum index='10' amt='200000'>Price</AddNum>
+  </Plus_Price_Index>
+  </IndexTable>
+  <Table>
+    <Base default='true'>
+      <Categories varName='Item_Category'>
+        <Minor>
+          <Roll type='percentile'>
+            <Plus1 maxRoll="70">
+              <AddNum amt="1">Plus_Amount</AddNum>
+              <AddNum amt="1">Plus_Price</AddNum>
+              <AddTable amt="1">Weapon_Determination</AddTable>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus1>
+            <Plus2 maxRoll="80">
+              <AddNum amt="2">Plus_Amount</AddNum>
+              <AddNum amt="2">Plus_Price</AddNum>
+              <AddTable amt="1">Weapon_Determination</AddTable>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus2>
+            <Specific_Weapon maxRoll="90">
+              <Save toSave="Specific">Weapon_Type</Save>
+            </Specific_Weapon>
+            <Special_Ability_Roll_Again maxRoll="100">
+              <AddTable amt="1">Special_Abilities</AddTable>
+              <AddTable amt="1">Base</AddTable>
+            </Special_Ability_Roll_Again>
+          </Roll>
+        </Minor>
+        <Medium>
+          <Roll type='percentile'>
+            <Plus1 maxRoll="10">
+              <AddNum amt="1">Plus_Amount</AddNum>
+              <AddNum amt="1">Plus_Price</AddNum>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus1>
+            <Plus2 maxRoll="29">
+              <AddNum amt="2">Plus_Amount</AddNum>
+              <AddNum amt="2">Plus_Price</AddNum>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus2>
+            <Plus3 maxRoll="58">
+              <AddNum amt="3">Plus_Amount</AddNum>
+              <AddNum amt="3">Plus_Price</AddNum>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus3>
+            <Plus4 maxRoll="62">
+              <AddNum amt="4">Plus_Amount</AddNum>
+              <AddNum amt="4">Plus_Price</AddNum>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus4>
+            <Specific_Weapon maxRoll="68">
+              <Save toSave="Specific">Weapon_Type</Save>
+            </Specific_Weapon>
+            <Special_Ability_Roll_Again maxRoll="100">
+              <AddTable amt="1">Special_Abilities</AddTable>
+              <AddTable amt="1">Base</AddTable>
+            </Special_Ability_Roll_Again>
+          </Roll>
+        </Medium>
+        <Major>
+          <Roll type='percentile'>
+            <Plus3 maxRoll="20">
+              <AddNum amt="3">Plus_Amount</AddNum>
+              <AddNum amt="3">Plus_Price</AddNum>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus3>
+            <Plus4 maxRoll="38">
+              <AddNum amt="4">Plus_Amount</AddNum>
+              <AddNum amt="4">Plus_Price</AddNum>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus4>
+            <Plus5 maxRoll="49">
+              <AddNum amt="5">Plus_Amount</AddNum>
+              <AddNum amt="5">Plus_Price</AddNum>
+              <Save toSave="Nonspecific">Weapon_Type</Save>
+            </Plus5>
+            <Specific_Weapon maxRoll="63">
+              <Save toSave="Specific">Weapon_Type</Save>
+            </Specific_Weapon>
+            <Special_Ability_Roll_Again maxRoll="100">
+              <AddTable amt="1">Special_Abilities</AddTable>
+              <AddTable amt="1">Base</AddTable>
+            </Special_Ability_Roll_Again>
+          </Roll>
+        </Major>
+      </Categories>
+    </Base>
+    <Weapon_Determination default="true">
+      <Categories varName="Weapon_Type">
+        <Nonspecific>
+        <Roll type="percentile">
+          <Melee maxRoll="70">
+            <Roll type="percentile">
+              <Dagger maxRoll="4">
+                <AddNum amt="302">Price</AddNum>
+                <Save toSave="Dagger">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Dagger>
+              <Greataxe maxRoll="14">
+                <AddNum amt="320">Price</AddNum>
+                <Save toSave="Greataxe">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Greataxe>
+              <Greatsword maxRoll="24">
+                <AddNum amt="350">Price</AddNum>
+                <Save toSave="Greatsword">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Greatsword>
+              <Kama maxRoll="28">
+                <AddNum amt="302">Price</AddNum>
+                <Save toSave="Kama">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Kama>
+              <Longsword maxRoll="41">
+                <AddNum amt="315">Price</AddNum>
+                <Save toSave="Longsword">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Longsword>
+              <Light_Mace maxRoll="45">
+                <AddNum amt="305">Price</AddNum>
+                <Save toSave="Light Mace">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Light_Mace>
+              <Heavy_Mace maxRoll="50">
+                <AddNum amt="312">Price</AddNum>
+                <Save toSave="Heavy Mace">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Heavy_Mace>
+              <Nunchaku maxRoll="54">
+                <AddNum amt="302">Price</AddNum>
+                <Save toSave="Nunchaku">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Nunchaku>
+              <Quarterstaff maxRoll="57">
+                <AddNum amt="600">Price</AddNum>
+                <Save toSave="Quarterstaff">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Quarterstaff>
+              <Rapier maxRoll="61">
+                <AddNum amt="302">Price</AddNum>
+                <Save toSave="Rapier">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Rapier>
+              <Scimitar maxRoll="66">
+                <AddNum amt="315">Price</AddNum>
+                <Save toSave="Scimitar">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Scimitar>
+              <Shortspear maxRoll="70">
+                <AddNum amt="315">Price</AddNum>
+                <Save toSave="Shortspear">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Shortspear>
+              <Siangham maxRoll="74">
+                <AddNum amt="303">Price</AddNum>
+                <Save toSave="Siangham">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Siangham>
+              <Bastard_Sword maxRoll="84">
+                <AddNum amt="335">Price</AddNum>
+                <Save toSave="Bastard Sword">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Bastard_Sword>
+              <Short_Sword maxRoll="89">
+                <AddNum amt="310">Price</AddNum>
+                <Save toSave="Short Sword">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Short_Sword>
+              <Dwarven_Waraxe maxRoll="100">
+                <AddNum amt="330">Price</AddNum>
+                <Save toSave="Dwarven Waraxe">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Dwarven_Waraxe>
+            </Roll>
+          </Melee>
+          <Uncommon maxRoll="80">
+            <Roll type="percentile">
+              <Uncommon_Melee maxRoll="50">
+                <AddNum amt="330">Price</AddNum>
+                <Save toSave="Uncommon Weapon">Weapon</Save>
+                <Save toSave="Neat">Damage_Type</Save>
+                <Save toSave="Melee">Weapon_Type</Save>
+              </Uncommon_Melee>
+              <Uncommon_Ranged maxRoll="100">
+                <AddNum amt="400">Price</AddNum>
+                <Save toSave="Uncommon Weapon">Weapon</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+                <Save toSave="Ranged">Weapon_Type</Save>               
+              </Uncommon_Ranged>
+            </Roll>
+          </Uncommon>
+          <Ranged maxRoll="100">
+            <Roll type="percentile">
+              <IsRanged maxRoll="100">
+                <Save toSave="Bow">Weapon</Save>
+                <Save toSave="Ranged">Weapon_Type</Save>
+                <Save toSave="Cool">Damage_Type</Save>
+              </IsRanged>
+            </Roll>
+          </Ranged>
+        </Roll>
+        </Nonspecific>
+        <Specific>
+          <Roll type="percentile">
+            <Melee_Specific maxRoll="50">
+              <Save toSave="Specific Melee Weapon">Weapon</Save>
+              <Save toSave="Melee">Weapon_Type</Save>
+              <Save toSave="Cool">Damage_Type</Save>
+            </Melee_Specific>
+            <Ranged_Specific maxRoll="100">
+              <Save toSave="Specific Ranged Weapon">Weapon</Save>
+              <Save toSave="Ranged">Weapon_Type</Save>
+              <Save toSave="Neat">Damage_Type</Save>
+            </Ranged_Specific>
+          </Roll>
+        </Specific>
+      </Categories>
+    </Weapon_Determination>
+    <Special_Materials default="true">
+      <Roll type="percentile">
+        <Normal maxRoll="95">
+          <Save toSave="Normal Materials">Special_Qualities</Save>
+        </Normal>
+        <Special_Materials maxRoll="100">
+          <AddTable amt="1">Special_Material_Types</AddTable>
+        </Special_Materials>
+      </Roll>
+    </Special_Materials>
+    <Special_Material_Types default="false">
+      <Roll type="percentile">
+        <Special_Materials maxRoll="100">
+          <Save toSave="Special Materials">Special_Qualities</Save>
+        </Special_Materials>
+      </Roll>
+    </Special_Material_Types>
+    <Special_Qualities default="true">
+      <Categories varName="Roll_Type">
+        <Treasure>
+          <Categories varName="Weapon_Type">
+            <Melee>
+              <Roll type="percentile">
+                <Shed_Light maxRoll="20">
+                  <Save toSave="Sheds Light">Special_Qualities</Save>
+                </Shed_Light>
+                <Intelligent maxRoll="25">
+                  <Save toSave="Intelligent">Special_Qualities</Save>
+                </Intelligent>
+                <Light_and_Intelligent maxRoll="35">
+                  <Save toSave="Sheds Light">Special_Qualities</Save>
+                  <Save toSave="Intelligent">Special_Qualities</Save>
+                </Light_and_Intelligent>
+                <Design_Clue maxRoll="50">
+                  <Save toSave="Design Clue">Special_Qualities</Save>
+                </Design_Clue>
+                <None maxRoll="100">
+                  <Save toSave="None">Special_Qualities</Save>
+                </None>
+              </Roll>
+            </Melee>
+            <Ranged>
+              <Roll type="percentile">
+                <Shed_Light maxRoll="30">
+                  <Save toSave="Sheds Light">Special_Qualities</Save>
+                </Shed_Light>
+                <Design_Clue maxRoll="45">
+                  <Save toSave="Design Clue">Special_Qualities</Save>
+                </Design_Clue>
+                <None maxRoll="100">
+                  <Save toSave="None">Special_Qualities</Save>
+                </None>
+              </Roll>
+            </Ranged>
+          </Categories>
+        </Treasure>
+        <Individual>
+          <Melee>
+            <Roll type="percentile">
+              <Intelligent maxRoll="5">
+                <Save toSave="Intelligent">Special_Qualities</Save>
+              </Intelligent>
+              <Design_Clue maxRoll="25">
+                <Save toSave="Design Clue">Special_Qualities</Save>
+              </Design_Clue>
+              <None maxRoll="100">
+                <Save toSave="None">Special_Qualities</Save>
+              </None>
+            </Roll>
+          </Melee>
+          <Ranged>
+            <Roll type="percentile">
+              <Design_Clue maxRoll="15">
+                <Save toSave="Design Clue">Special_Qualities</Save>
+              </Design_Clue>
+              <None maxRoll="100">
+                <Save toSave="None">Special_Qualities</Save>
+              </None>
+            </Roll>
+          </Ranged>
+        </Individual>
+      </Categories>
+    </Special_Qualities>
+    <Special_Abilities default="false">
+      <Categories varName="Roll_Type">
+        <Treasure>
+          <Categories varName="Weapon_Type">
+            <Melee>
+              <Roll type="percentile">
+                <Neat_Ability maxRoll="50">
+                  <Categories varName="Damage_Type">
+                    <Neat>
+                      <ItemVarCheck toCheck="Plus_Price" toMatch="10" op="lte">
+                        <Save toSave="Has neat melee ability">Special_Abilities</Save>
+                        <AddNum amt="2">Plus_Price</AddNum>
+                      </ItemVarCheck>
+                      <Default>
+                        <AddTable amt="1">Special_Abilities</AddTable>
+                      </Default>
+                    </Neat>
+                    <Cool>
+                      <AddTable amt="1">Special_Abilities</AddTable>
+                    </Cool>
+                  </Categories>
+                </Neat_Ability>
+                <Cool_Ability maxRoll="99">
+                  <ItemVarCheck toCheck="Plus_Price" toMatch="10" op="lte">
+                    <Save toSave="Has cool melee ability">Special_Abilities</Save>
+                    <AddNum amt="1">Plus_Price</AddNum>
+                  </ItemVarCheck>
+                  <Default>
+                    <AddTable amt="1">Special_Abilities</AddTable>
+                  </Default>
+                </Cool_Ability>
+              </Roll>
+            </Melee>
+            <Ranged>
+              <Roll type="percentile">
+                <Cool_Ability maxRoll="99">
+                  <ItemVarCheck toCheck="Plus_Price" toMatch="10" op="lte">
+                    <Save toSave="Has cool ranged ability">Special_Abilities</Save>
+                    <AddNum amt="1">Plus_Price</AddNum>
+                  </ItemVarCheck>
+                </Cool_Ability>
+                <Cool_Ability maxRoll="100">
+                  <ItemVarCheck toCheck="Plus_Price" toMatch="10" op="lte">
+                    <Save toSave="Has cool ranged ability">Special_Abilities</Save>
+                    <AddNum amt="2">Plus_Price</AddNum>
+                  </ItemVarCheck>
+                </Cool_Ability>
+              </Roll>
+            </Ranged>
+          </Categories>
+        </Treasure>
+        <Individual>
+          <Categories varName="Weapon_Type">
+            <Melee>
+              <Roll type="percentile">
+                <Cool_Ability maxRoll="50">
+                  <ItemVarCheck toCheck="Plus_Price" toMatch="10" op="lte">
+                    <Save toSave="Has cool melee ability">Special_Abilities</Save>
+                    <AddNum amt="1">Plus_Price</AddNum>
+                    <Default>
+                      <AddTable amt="1">Special_Abilities</AddTable>
+                    </Default>
+                  </ItemVarCheck>
+                </Cool_Ability>
+              </Roll>
+            </Melee>
+            <Ranged>
+              <Roll type="percentile">
+                <Cool_Ability maxRoll="50">
+                  <ItemVarCheck toCheck="Plus_Price" toMatch="10" op="lte">
+                    <Save toSave="Has cool ability">Special_Abilities</Save>
+                    <AddNum amt="1">Plus_Price</AddNum>
+                  </ItemVarCheck>
+                </Cool_Ability>
+                <Cool_Ability maxRoll="100">
+                  <ItemVarCheck toCheck="Plus_Price" toMatch="10" op="lte">
+                    <Save toSave="Has cool specific ability">Special_Abilities</Save>
+                    <AddNum amt="2">Plus_Price</AddNum>
+                  </ItemVarCheck>
+                </Cool_Ability>
+              </Roll>
+            </Ranged>
+          </Categories>
+        </Individual>
+      </Categories>
+    </Special_Abilities>
+    <Specific_Weapon default="false">
+      <Roll type="percentile">
+        <Specific maxRoll="100">
+          <Save toSave="Specific Weapon">Special_Qualities</Save>
+        </Specific>
+      </Roll>
+    </Specific_Weapon>
+  </Table>
+</Weapon_Table>
