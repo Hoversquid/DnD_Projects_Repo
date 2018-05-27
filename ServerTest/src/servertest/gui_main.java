@@ -81,7 +81,10 @@ public class gui_main extends javax.swing.JFrame {
 
     private void btn_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendActionPerformed
         
-        
+        /*
+        the following  try catch block opens a listener 
+        and socket and sends the message from the edit text.
+        */
         try {                                         
             
             
